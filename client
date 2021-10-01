@@ -1,0 +1,7 @@
+client = {
+    [B068753E-243C-4CEF-BB23-9689BC348ADC] = true,
+    [00000000] = true,
+    [00000000] = true
+        }
+
+    return client
