@@ -1,1 +1,6 @@
+whitename = {
+    [00000000] = true,
+    [00000000] = true
+        }
 
+    return whitename
