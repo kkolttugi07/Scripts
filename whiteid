@@ -1,6 +1,0 @@
-whitecode = {
-    [228348406] = true,
-    [00000000] = true
-        }
-
-    return whitecode
