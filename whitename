@@ -1,6 +1,6 @@
-whitename = {
+whitenick = {
     [00000000] = true,
     [00000000] = true
         }
 
-    return whitename
+    return whitenick
