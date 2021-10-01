@@ -1,6 +1,6 @@
-whiteid = {
+whitecode = {
     [00000000] = true,
     [00000000] = true
         }
 
-    return whiteid
+    return whitecode
