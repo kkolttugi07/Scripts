@@ -242,6 +242,7 @@ Script:Button("Hit Box", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/shit%20script%20pack/CheatX'))()
 end)
 
+
 Script:Button("Anti-AFK", function()
     local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -271,11 +272,11 @@ end)
 
 local LocalPlr = lib:Tab("Local Player")
 
-LocalPlr:Toggle("Auto Refresh", function(v)
+LocalPlr:Toggle("Auto Refresh",function(v)
     getgenv().spw = v
     while wait() do
     if not getgenv().spw then return end
-    if game.Players.LocalPlayer.Character.Humanoid.Health < 1 and swit == false then
+    if game.Players.LocalPlayer.Character.Humanoid.Health < 0.1 and swit == false then
         poi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         swit = true
     end
@@ -299,13 +300,35 @@ LocalPlr:Slider("Gravity", 0, 200, 200, function(v)
     game.Workspace.Gravity = (v)
 end)
 
-local Prem = lib:Tab("Premium")
+local PremGame = lib:Tab("Premium Game Hack")
 
 for i, v in ipairs(whitelistecheck) do 
     if v == client then 
-        Prem:Label("Your Premium")
+        PremGame:Label("Your Premium")
     end
-  end
+end
+
+if game.PlaceId == 3952704772 then
+
+        PremGame:Toggle("Auto take Gun",function(v)
+            for i, v in ipairs(whitelistecheck) do 
+                if v == client then 
+        getgenv().autogun = v
+        while wait() do
+        if not getgenv().autogun then return end
+        for vule, child in pairs(game.Workspace:GetChildren()) do
+            if child.Name == "Model" then
+              for index, sss in pairs(child:GetChildren()) do
+                if sss.Name == "Part" then
+                  for aaa, bbb in pairs(sss:GetDescendants()) do
+                    if bbb.Name == "TouchInterest" then
+                      firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, bbb.Parent, 0)
+                      firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, bbb.Parent, 1)
+                    end end end end end end end end end
+        end)
+    end
+
+
 
 local Credit = lib:Tab("Credits")
 
