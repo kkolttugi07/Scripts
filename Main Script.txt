@@ -1,1 +1,322 @@
-print("hi")
+local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
+local Notify = AkaliNotif.Notify;
+local whitelistecheck = loadstring(game:HttpGet("https://raw.githubusercontent.com/kkolttugi07/Scripts/master/client",true))()
+local client = game:GetService("RbxAnalyticsService"):GetClientId();
+local VLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vep1032/VepStuff/main/VL"))()
+
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+
+local PlrName = game:GetService("Players").LocalPlayer.Name
+
+Notify({Description = GameName; Title = "Git Hub Script"; Duration = 3;});
+
+local lib = VLib:Window("GIT-CAT GUI", PlrName, ":)")
+
+local Main = lib:Tab("Main")
+
+if game.PlaceId == 155615604 then --프리즌 라이프
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/BqDQxCh7"))();
+    end)
+        loadstring(game:HttpGet("https://pastebin.com/raw/txtTb5xP"))();
+end
+
+if game.PlaceId == 6872274481 then --배드워즈
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+    end)
+end
+
+if game.PlaceId == 606849621 then --젤브
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/wawsdasdacx/ohascriptnrrewading/main/jbsaxcriptidk1"))();
+    end)
+end
+
+if game.PlaceId == 445664957 then --파쿠르
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LegoHacks/Parkour/main/Main.lua"))()
+    end)
+end
+
+if game.PlaceId == 142823291 then --머더 2
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Doggo-cryto/EclipseMM2/master/Script", true))()
+    end)
+    gam:addButton("V.G Script", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+    end)
+end
+
+if game.PlaceId == 286090429 then --아스널
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
+    end)
+end
+
+if game.PlaceId == 3527629287 then --빅페인트볼
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
+    end)
+end
+
+if game.PlaceId == 662417684 then --럭키블럭
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/xTXe5H9w"))()
+    end)
+end
+
+if game.PlaceId == 914010731 then --로구울
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/z4gs/scripts/master/Ro-Ghoul%20Auto%20Farm.lua"))()
+    end)
+end
+
+if game.PlaceId == 1224212277 then --매드시티
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGetAsync("https://jack1214060.xyz/jayhub"))()
+    end)
+end
+
+if game.PlaceId == 2753915549 then --블피
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/ALLFREE/main/hyperx.lua"))()
+    end)
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-IDK/Blox-Fruits-Script/main/blox%20fruit%20script.txt"))()
+    end)
+end
+
+if game.PlaceId == 4442272183 then --블피 신세계
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/ALLFREE/main/hyperx.lua"))()
+    end)
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-IDK/Blox-Fruits-Script/main/blox%20fruit%20script.txt"))()
+    end)
+end
+
+if game.PlaceId == 7449423635 then --블피 신신세계
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/ALLFREE/main/hyperx.lua"))()
+    end)
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-IDK/Blox-Fruits-Script/main/blox%20fruit%20script.txt"))()
+    end)
+end
+
+if game.PlaceId == 920587237 then --입양
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+    end)
+end
+
+if game.PlaceId == 6447798030 then --프나펌
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
+    end)
+end
+
+if game.PlaceId == 537413528 then --배만들기
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Build%20A%20Boat%20For%20Treasure/BABFT"))()
+    end)
+end
+
+if game.PlaceId == 4520749081 then --킹피
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/sannin9000/scripts/main/kinglegacy.lua"))()
+    end)
+end
+
+if game.PlaceId == 5931540094 then --킹피 레이드
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/sannin9000/scripts/main/kinglegacy.lua"))()
+    end)
+end
+
+if game.PlaceId == 6381829480 then --킹피 신세계
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/sannin9000/scripts/main/kinglegacy.lua"))()
+    end)
+end
+
+if game.PlaceId == 4787629450 then --부가부가
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/YEs13421k/BOOGA-SCRIPT/main/Roblox%20Booga%20Booga%20Script"))();
+    end)
+end
+
+if game.PlaceId == 2809202155 then --너기묘
+    Main:Button(GameName .. " Hack", function()
+        getgenv().Key = "BETA_V1"
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/ALLHACKLOADER/main/YBALOADER"))()
+    end)
+end
+
+if game.PlaceId == 5290908008 then --너기묘 1ㄷ1
+    Main:Button(GameName .. " Hack", function()
+        getgenv().Key = "BETA_V1"
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/ALLHACKLOADER/main/YBALOADER"))()
+    end)
+end
+
+if game.PlaceId == 4643697430 then --스보런
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kolgie/YBA-GUI/main/yba-gui-obfuscated.lua"))()
+    end)
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/crackus/main/xenonusfix", true))()
+    end)
+end
+
+if game.PlaceId == 183364845 then --스피드 런
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/dragonismcode/robloxscripts/main/speedrun4.lua'), true))()
+    end)
+end
+
+if game.PlaceId == 6679274937 then --반스 월드
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/and45554/DawnyHub/main/Dawny", true))()
+    end)
+end
+
+if game.PlaceId == 2317712696 then --와일드 웨스트
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/saucekid/scripts/main/yeehaw.lua"))()
+    end)
+end
+
+if game.PlaceId == 111311599 then --크리티컬 스트라이크
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/snjSSnHT"))()
+    end)
+end
+
+if game.PlaceId == 189707 then --자연 재해 서바이벌
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/garfield%20hub", true))()
+    end)
+end
+
+if game.PlaceId == 13822889 then --럼타
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet'https://raw.githubusercontent.com/0x37Dev/Cool-Solo-Dupe-Thing/main/script.lua')()
+    end)
+end
+
+if game.PlaceId == 2788229376 then --다후드
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/cjdjmj/new-ui-godmode/main/README.md", true))()
+    end)
+end
+
+if game.PlaceId == 4042427666 then --애니 파이팅 시뮬
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AokijiFlame/AFS/main/AnimeFightingSim"))()
+    end)
+end
+
+if game.PlaceId == 1345139196 then --애니 파이팅 시뮬
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("http://void-scripts.com/Scripts/treasureHuntSim.lua"))()
+    end)
+end
+
+if game.PlaceId == 6846458508 then --어유타
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/johnbruhno/zzz/main/g"))()
+    end)
+end
+
+local Script = lib:Tab("Script")
+
+Script:Label("-----------------|Script|-----------------")
+
+Script:Button("InfiniteYield", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
+end)
+
+Script:Button("Hit Box", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/shit%20script%20pack/CheatX'))()
+end)
+
+Script:Button("Anti-AFK", function()
+    local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   wait(1)
+   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+end)
+
+Script:Button("invisible", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/iiKMg6iw"))();
+end)
+
+Script:Label("----------|Developer Script|----------")
+
+Script:Button("Simple Spy", function()
+    loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+end)
+
+Script:Button("Dex", function()
+    loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
+end)
+
+Script:Button("Chat Log", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/stggPUBM", true))()
+end)
+
+local LocalPlr = lib:Tab("Local Player")
+
+LocalPlr:Toggle("Auto Refresh", function(v)
+    getgenv().spw = v
+    while wait() do
+    if not getgenv().spw then return end
+    if game.Players.LocalPlayer.Character.Humanoid.Health < 1 and swit == false then
+        poi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        swit = true
+    end
+
+    if swit == true then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = poi
+        end
+    game.Players.LocalPlayer.CharacterAdded:connect(function()
+        wait(0.6)
+        swit = false
+    end)
+end
+end)
+LocalPlr:Slider("Player Speed", 16, 250, 0, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+LocalPlr:Slider("Player Jump", 50, 250, 0, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+LocalPlr:Slider("Gravity", 0, 200, 200, function(v)
+    game.Workspace.Gravity = (v)
+end)
+
+local Prem = lib:Tab("Premium")
+
+for i, v in ipairs(whitelistecheck) do 
+    if v == client then 
+        Prem:Label("Your Premium")
+    end
+  end
+
+local Credit = lib:Tab("Credits")
+
+Credit:Label("Made By Git-Cat")
+
+Credit:Button("Copy Discord Link", function()
+    setclipboard("https://discord.gg/sXRfvRyQKx")
+    Notify({Description = "link has been copied"; Title = "Git Hub Script"; Duration = 5;});
+end)
+
+Credit:Button("Destroy UI",function()
+    game.CoreGui["Library"]:Destroy()
+    game.CoreGui["AkaliNotif"]:Destroy()
+end)
