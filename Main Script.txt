@@ -232,7 +232,7 @@ end
 
 local Script = lib:Tab("Script")
 
-Script:Label("-----------------|Script|-----------------")
+Script:Label("━━━━━━━━━━━━━━━|Script|━━━━━━━━━━━━━━━━")
 
 Script:Button("InfiniteYield", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
@@ -255,7 +255,7 @@ Script:Button("invisible", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/iiKMg6iw"))();
 end)
 
-Script:Label("----------|Developer Script|----------")
+Script:Label("━━━━━━━━━━━━|Developer Script|━━━━━━━━━━━━")
 
 Script:Button("Simple Spy", function()
     loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
@@ -309,13 +309,15 @@ for i, v in ipairs(whitelistecheck) do
 
 local Credit = lib:Tab("Credits")
 
+Credit:Label("━━━━━━━━━━━━━━━|Creator|━━━━━━━━━━━━━━━")
 Credit:Label("Made By Git-Cat")
 
+Credit:Label("━━━━━━━━━━━━━━━|Discord|━━━━━━━━━━━━━━━")
 Credit:Button("Copy Discord Link", function()
     setclipboard("https://discord.gg/sXRfvRyQKx")
     Notify({Description = "link has been copied"; Title = "Git Hub Script"; Duration = 5;});
 end)
-
+Credit:Label("━━━━━━━━━━━━━━━━━|UI|━━━━━━━━━━━━━━━━━")
 Credit:Button("Destroy UI",function()
     game.CoreGui["Library"]:Destroy()
     game.CoreGui["AkaliNotif"]:Destroy()
