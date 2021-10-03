@@ -242,6 +242,10 @@ Script:Button("Hit Box", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/shit%20script%20pack/CheatX'))()
 end)
 
+Script:Button("Fe Gravity Gun", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/KduE9A6z'))()
+end)
+
 
 Script:Button("Anti-AFK", function()
     local vu = game:GetService("VirtualUser")
@@ -276,7 +280,7 @@ LocalPlr:Toggle("Auto Refresh",function(v)
     getgenv().spw = v
     while wait() do
     if not getgenv().spw then return end
-    if game.Players.LocalPlayer.Character.Humanoid.Health < 0.1 and swit == false then
+    if game.Players.LocalPlayer.Character.Humanoid.Health < 1 and swit == false then
         poi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         swit = true
     end
@@ -302,29 +306,38 @@ end)
 
 local PremGame = lib:Tab("Premium Game Hack")
 
-for i, v in ipairs(whitelistecheck) do 
-    if v == client then 
-        PremGame:Label("Your Premium")
-    end
-end
+PremGame:Label("Only Premium User")
+
 
 if game.PlaceId == 3952704772 then
-
+for c,d in pairs(workspace:GetChildren()) do
+        if d.Name == "Model" then
+      for e,f in pairs(d:GetDescendants()) do
+        if f.Name == "Model" or f.Name == "Handle" then
+          for g,h in pairs(f:GetDescendants()) do
+            if h:IsA("TouchTransmitter") then
+              h.Name = "Touch"
+      end end end end end end
+      
         PremGame:Toggle("Auto take Gun",function(v)
             for i, v in ipairs(whitelistecheck) do 
                 if v == client then 
         getgenv().autogun = v
         while wait() do
-        if not getgenv().autogun then return end
-        for vule, child in pairs(game.Workspace:GetChildren()) do
-            if child.Name == "Model" then
-              for index, sss in pairs(child:GetChildren()) do
-                if sss.Name == "Part" then
-                  for aaa, bbb in pairs(sss:GetDescendants()) do
-                    if bbb.Name == "TouchInterest" then
-                      firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, bbb.Parent, 0)
-                      firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, bbb.Parent, 1)
-                    end end end end end end end end end
+            for index,v in pairs(game.workspace:GetChildren()) do
+                if v.name == "Model" then
+                for a,b in pairs(v:GetDescendants()) do
+                  if b:IsA("TouchTransmitter") and b.Name == "TouchInterest" then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, b.Parent, 0) --0 is touch
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, b.Parent, 1) -- 1 is untouch
+                end end end end end end end
+        end)
+        PremGame:Button("Kill All", function()
+        for i,v in pairs(game.Players:GetPlayers()) do
+            if v:IsA("Player") and v ~= game.Players.LocalPlayer then
+            game:GetService("Players")["GitCat_Script"].Backpack.P1.Script.Parent.RemoteEvent:FireServer(workspace[v.Name].Humanoid) -- v.Humanoid instead might work as well
+                end
+            end
         end)
     end
 
