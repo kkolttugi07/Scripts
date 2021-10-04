@@ -309,6 +309,8 @@ end)
 local PremGame = lib:Tab("Premium Game Hack")
 
 PremGame:Label("━━━━━━━━━━━|Only Premium User|━━━━━━━━━━━")
+for clientindex, clientfuncion in ipairs(whitelistecheck) do 
+    if clientfuncion == client then 
 
 
 if game.PlaceId == 3952704772 then
@@ -316,9 +318,54 @@ if game.PlaceId == 3952704772 then
     workspace:FindFirstChild("Yes", true).Parent.Parent.Name = ("gun");
     workspace.gun:FindFirstChild("P1", true).Parent.Name = ("getgun");
 
+    PremGame:Dropdown("Infinity Gun", {"Sound1", "Sound2"}, function(Sound)
+        game:GetService("Players").LocalPlayer.Character.P1.Handle[Sound]:Destroy()
+        game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
+        
+        game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
+            p1.Button1Down:Connect(function()
+                if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
+                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
+                end;
+            end);
+        end);
+    end)
+
+    PremGame:Toggle("Auto Get Gun", function(v)
+        getgenv().autogun = v
+        while wait() do
+        if not getgenv().autogun then return end
+        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 0)
+        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 1)
+        end
+    end)
+
+    PremGame:Label("━━━━━━━━━━━━━━━|Player|━━━━━━━━━━━━━━━")
+
+    local Players = game:GetService("Players")
+
+    local PlayList = {}
+    for i,v in pairs(game:GetService("Players"):GetPlayers()) do 
+        if v ~= game.Players.LocalPlayer then 
+            table.insert(PlayList,v.Name)
+        end
+    end
+
+    PremGame:Dropdown("Players", PlayList, function(ok)
+        xdvalue = ok
+    end)
+
+    PremGame:Button("Refresh Player List", function()
+        table.clear(PlayList)
+        wait(0.1)
+        for i,v in pairs(game:GetService("Players"):GetPlayers()) do 
+            if v ~= game.Players.LocalPlayer then 
+                table.insert(PlayList,v.Name)
+            end
+        end
+    end)
+
     PremGame:Button("Kill All", function()
-        for i, v in ipairs(whitelistecheck) do 
-            if v == client then 
         function getD()
             for a,b in pairs(game:GetDescendants()) do
                 if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
@@ -332,12 +379,26 @@ if game.PlaceId == 3952704772 then
             if v:IsA("Player") and v ~= game.Players.LocalPlayer then
                 dmg:FireServer(workspace[v.Name].Humanoid)
             end
-        end end end
+        end
+    end)
+    PremGame:Toggle("Player Loop Kill", function(v)
+    getgenv().loopkill = v
+    while wait(2) do
+        if not getgenv().loopkill then return end
+        function getD()
+            for a,b in pairs(game:GetDescendants()) do
+                if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
+                    return b
+                end
+            end
+            return false
+            end
+            local dmg = getD()
+                dmg:FireServer(workspace[xdvalue].Humanoid)
+            end
     end)
 
     PremGame:Toggle("Loop Kill All", function(v)
-        for i, v in ipairs(whitelistecheck) do 
-            if v == client then 
         getgenv().loopkillall = v
         while wait(1.5) do
         if not getgenv().loopkillall then return end
@@ -355,36 +416,11 @@ if game.PlaceId == 3952704772 then
                 dmg:FireServer(workspace[v.Name].Humanoid)
             end
         end
-        end end end
+        end
     end)
-PremGame:Label("━━━━━━━━━━━━━━━━|Gun|━━━━━━━━━━━━━━━━")
 
-    PremGame:Button("Infinity Gun", function()
-        for i, v in ipairs(whitelistecheck) do 
-            if v == client then 
-        game:GetService("Players").LocalPlayer.Character.P1.Handle.Sound1:Destroy()
-        game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
-        
-        game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
-            p1.Button1Down:Connect(function()
-                if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
-                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
-                end;
-            end);
-        end); end end
-    end)
-    end
+end end end
 
-    PremGame:Toggle("Auto Get Gun", function(v)
-        for i, v in ipairs(whitelistecheck) do 
-            if v == client then 
-        getgenv().autogun = v
-        while wait() do
-        if not getgenv().autogun then return end
-        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 0)
-        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 1)
-        end end end
-    end)
 
 
 
