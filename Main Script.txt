@@ -333,36 +333,43 @@ if game.PlaceId == 3952704772 then
 
     PremGame:Toggle("Auto Get Gun", function(v)
         getgenv().autogun = v
-        while wait() do
-        if not getgenv().autogun then return end
-        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 0)
-        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 1)
-        end
+        local Loop = game:GetService("RunService").Stepped:Connect(function()
+            if not getgenv().autogun then wait() Loop:Disconnect() wait() v = false end
+            v = true
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 0)
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 1)
+         end)
     end)
+
+
 
     PremGame:Label("━━━━━━━━━━━━━━━|Player|━━━━━━━━━━━━━━━")
 
-    local Players = game:GetService("Players")
-
-    local PlayList = {}
-    for i,v in pairs(game:GetService("Players"):GetPlayers()) do 
-        if v ~= game.Players.LocalPlayer then 
-            table.insert(PlayList,v.Name)
-        end
+PremGame:Textbox("Player Name (Can Be Shortened)", true, function(v)
+    name = v
+    for i,v in pairs(game:service'Players':GetPlayers()) do
+    if v.Name:match(name) then
+        xdvalue = v.Name
+        print(xdvalue)
     end
+end
+end)
 
-    PremGame:Dropdown("Players", PlayList, function(ok)
-        xdvalue = ok
-    end)
-
-    PremGame:Button("Refresh Player List", function()
-        table.clear(PlayList)
-        wait(0.1)
-        for i,v in pairs(game:GetService("Players"):GetPlayers()) do 
-            if v ~= game.Players.LocalPlayer then 
-                table.insert(PlayList,v.Name)
+PremGame:Toggle("Player Loop Kill", function(v)
+    getgenv().loopkill = v
+    while wait(2) do
+        if not getgenv().loopkill then return end
+        function getD()
+            for a,b in pairs(game:GetDescendants()) do
+                if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
+                    return b
+                end
             end
-        end
+            return false
+            end
+            local dmg = getD()
+                dmg:FireServer(workspace[xdvalue].Humanoid)
+            end
     end)
 
     PremGame:Button("Kill All", function()
@@ -380,22 +387,6 @@ if game.PlaceId == 3952704772 then
                 dmg:FireServer(workspace[v.Name].Humanoid)
             end
         end
-    end)
-    PremGame:Toggle("Player Loop Kill", function(v)
-    getgenv().loopkill = v
-    while wait(2) do
-        if not getgenv().loopkill then return end
-        function getD()
-            for a,b in pairs(game:GetDescendants()) do
-                if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
-                    return b
-                end
-            end
-            return false
-            end
-            local dmg = getD()
-                dmg:FireServer(workspace[xdvalue].Humanoid)
-            end
     end)
 
     PremGame:Toggle("Loop Kill All", function(v)
