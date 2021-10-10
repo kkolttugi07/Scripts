@@ -44,7 +44,7 @@ if game.PlaceId == 142823291 then --머더 2
     Main:Button(GameName .. " Hack", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Doggo-cryto/EclipseMM2/master/Script", true))()
     end)
-    gam:addButton("V.G Script", function()
+    Main:Button("V.G Script", function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
     end)
 end
@@ -80,7 +80,7 @@ if game.PlaceId == 1224212277 then --매드시티
 end
 
 if game.PlaceId == 2753915549 then --블피
-    Main:Button(GameName .. " Hack", function()
+    Main:Button(GameName .. " Hack (Recommend)", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/ALLFREE/main/hyperx.lua"))()
     end)
     Main:Button(GameName .. " Hack", function()
@@ -89,7 +89,7 @@ if game.PlaceId == 2753915549 then --블피
 end
 
 if game.PlaceId == 4442272183 then --블피 신세계
-    Main:Button(GameName .. " Hack", function()
+    Main:Button(GameName .. " Hack (Recommend)", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/ALLFREE/main/hyperx.lua"))()
     end)
     Main:Button(GameName .. " Hack", function()
@@ -98,7 +98,7 @@ if game.PlaceId == 4442272183 then --블피 신세계
 end
 
 if game.PlaceId == 7449423635 then --블피 신신세계
-    Main:Button(GameName .. " Hack", function()
+    Main:Button(GameName .. " Hack (Recommend)", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/ALLFREE/main/hyperx.lua"))()
     end)
     Main:Button(GameName .. " Hack", function()
@@ -243,11 +243,6 @@ Script:Button("Hit Box", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/shit%20script%20pack/CheatX'))()
 end)
 
-Script:Button("Fe Gravity Gun", function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/KduE9A6z'))()
-end)
-
-
 Script:Button("Anti-AFK", function()
     local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -274,6 +269,18 @@ end)
 Script:Button("Chat Log", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/stggPUBM", true))()
 end)
+
+local FeScript = lib:Tab("Fe Script")
+
+FeScript:Label("━━━━━━━━━━━━━━━|Fe Script|━━━━━━━━━━━━━━━")
+FeScript:Button("Fe Gravity Gun", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/KduE9A6z'))()
+end)
+FeScript:Button("Fe Car Fly", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/kkolttugi07/Hack-Scripts/main/Car%20Fly'))()
+end)
+
+
 
 local LocalPlr = lib:Tab("Local Player")
 
@@ -309,19 +316,20 @@ end)
 local PremGame = lib:Tab("Premium Game Hack")
 
 PremGame:Label("━━━━━━━━━━━|Only Premium User|━━━━━━━━━━━")
+
 for clientindex, clientfuncion in ipairs(whitelistecheck) do 
     if clientfuncion == client then 
-
-
 if game.PlaceId == 3952704772 then
+    if workspace:FindFirstChild("Yes", true) then workspace:FindFirstChild("Yes", true).Parent.Parent.Name = ("gun"); end
+    if workspace.gun:FindFirstChild("P1", true) then workspace.gun:FindFirstChild("P1", true).Parent.Name = ("getgun");
+    game:GetService("Workspace").gun.getgun.P1.Value:Destroy()
+    game:GetService("Workspace").gun.getgun.P1:Destroy()
+    end
 
-    workspace:FindFirstChild("Yes", true).Parent.Parent.Name = ("gun");
-    workspace.gun:FindFirstChild("P1", true).Parent.Name = ("getgun");
-
+    PremGame:Label("Sound1: Sound X, Sound2: Sound O")
     PremGame:Dropdown("Infinity Gun", {"Sound1", "Sound2"}, function(Sound)
         game:GetService("Players").LocalPlayer.Character.P1.Handle[Sound]:Destroy()
         game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
-        
         game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
             p1.Button1Down:Connect(function()
                 if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
@@ -350,7 +358,7 @@ PremGame:Textbox("Player Name (Can Be Shortened)", true, function(v)
     for i,v in pairs(game:service'Players':GetPlayers()) do
     if v.Name:match(name) then
         xdvalue = v.Name
-        print(xdvalue)
+        Notify({Description = "Player Name = " .. xdvalue; Title = "Git Hub Script"; Duration = 3;});
     end
 end
 end)
