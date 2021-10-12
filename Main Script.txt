@@ -219,7 +219,7 @@ if game.PlaceId == 4042427666 then --애니 파이팅 시뮬
     end)
 end
 
-if game.PlaceId == 1345139196 then --애니 파이팅 시뮬
+if game.PlaceId == 1345139196 then --보물 사냥 시물레이터
     Main:Button(GameName .. " Hack", function()
         loadstring(game:HttpGet("http://void-scripts.com/Scripts/treasureHuntSim.lua"))()
     end)
@@ -228,6 +228,12 @@ end
 if game.PlaceId == 6846458508 then --어유타
     Main:Button(GameName .. " Hack", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/johnbruhno/zzz/main/g"))()
+    end)
+end
+
+if game.PlaceId == 6299805723 then --애니 파이터
+    Main:Button(GameName .. " Hack", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kkolttugi07/Hack-Scripts/main/Anime%20Fighters%20Simulator%20Skip%20Quest"))()
     end)
 end
 
