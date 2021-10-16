@@ -10,52 +10,10 @@ TeamCheck = false
 TeamCheck2 = false
 VisCheck = false
 
+
 local Window = Luminosity.new("Git-Cat UI", game:GetService("Players").LocalPlayer.Name, 6022668898)
 local Tab1 = Window.Tab("Main", 6026568198)
-
-local Tab2 = Window.Tab("Player", 6022668945)
-local Folder = Tab2.Folder("Local Player", "Local Player Setting")
-Folder.Slider("Player Speed", {Precise = true, Default = 16, Min = 16, Max = 250}, function(v)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
-end)
-Folder.Slider("Player Jump", {Precise = true, Default = 50, Min = 50, Max = 250}, function(v)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
-end)
-Folder.Slider("Gravity", {Precise = true, Default = 200, Min = 0, Max = 200}, function(v)
-    game.Workspace.Gravity = v
-end)
-Folder.Toggle("Auto Refresh", function(v)
-getgenv().spw = v
-while wait() do
-if not getgenv().spw then return end
-if game.Players.LocalPlayer.Character.Humanoid.Health < 1 and swit == false then
-    poi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    swit = true
-end
-
-if swit == true then
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = poi
-    end
-game.Players.LocalPlayer.CharacterAdded:connect(function()
-    wait(0.6)
-    swit = false
-end)
-end
-end)
-Folder.Button("invisible", "Click", function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/iiKMg6iw"))();
-end)
-
-local Tab3 = Window.Tab("Esp", 6031075931)
-local Tab4 = Window.Tab("Special Game", 6031154873)
-local Tab5 = Window.Tab("Credits", 6031280894)
-
-
-
-
-for clientindex, clientfuncion in ipairs(whitelistecheck) do 
-    if clientfuncion == client then
-        local Folder = Tab1.Folder("Game Script", "Automatically recommend game hacks")
+local Folder = Tab1.Folder("Game Script", "Automatically recommend game hacks")
 if game.PlaceId == 155615604 then --프리즌 라이프
     Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/BqDQxCh7"))();
@@ -319,118 +277,151 @@ Folder.Button("Fe Car Fly", "Click", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/kkolttugi07/Hack-Scripts/main/Car%20Fly'))()
 end)
 
+local Tab2 = Window.Tab("Player", 6022668945)
+local Folder = Tab2.Folder("Local Player", "Local Player Setting")
+Folder.Slider("Player Speed", {Precise = true, Default = 16, Min = 16, Max = 250}, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+Folder.Slider("Player Jump", {Precise = true, Default = 50, Min = 50, Max = 250}, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+Folder.Slider("Gravity", {Precise = true, Default = 200, Min = 0, Max = 200}, function(v)
+    game.Workspace.Gravity = v
+end)
+Folder.Toggle("Auto Refresh", function(v)
+getgenv().spw = v
+while wait() do
+if not getgenv().spw then return end
+if game.Players.LocalPlayer.Character.Humanoid.Health < 0.1 and swit == false then
+    poi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    swit = true
+end
 
+if swit == true then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = poi
+    end
+game.Players.LocalPlayer.CharacterAdded:connect(function()
+    wait(0.6)
+    swit = false
+end)
+end
+end)
+Folder.Button("invisible", "Click", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/iiKMg6iw"))();
+end)
 
+local Tab3 = Window.Tab("Esp", 6031075931)
 local Cheat = Tab3.Cheat("ESP", "ESP Setting", function(v)
     ESP:Toggle(v)
 end)
 Cheat.Toggle("Team Check", function(e)
     ESP.TeamMates = e
 end)
+
+local Tab4 = Window.Tab("Special Game", 6031154873)
 if game.PlaceId == 3952704772 then
 
-local Folder = Tab4.Folder("Gun", "Gun Menu")
-if workspace:FindFirstChild("Yes", true) then workspace:FindFirstChild("Yes", true).Parent.Parent.Name = ("gun"); end
-if workspace.gun:FindFirstChild("P1", true) then workspace.gun:FindFirstChild("P1", true).Parent.Name = ("getgun");
-game:GetService("Workspace").gun.getgun.P1.Value:Destroy()
-game:GetService("Workspace").gun.getgun.P1:Destroy()
-end
-
-Folder.Button("Infinity Gun Sound", "Click", function()
-    game:GetService("Players").LocalPlayer.Character.P1.Handle.Sound2:Destroy()
-    game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
-    game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
-        p1.Button1Down:Connect(function()
-            if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
-                game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
-            end;
+    local Folder = Tab4.Folder("Gun", "Gun Menu")
+    if workspace:FindFirstChild("Yes", true) then workspace:FindFirstChild("Yes", true).Parent.Parent.Name = ("gun"); end
+    if workspace.gun:FindFirstChild("P1", true) then workspace.gun:FindFirstChild("P1", true).Parent.Name = ("getgun");
+    game:GetService("Workspace").gun.getgun.P1.Value:Destroy()
+    game:GetService("Workspace").gun.getgun.P1:Destroy()
+    end
+    
+    Folder.Button("Infinity Gun Sound", "Click", function()
+        game:GetService("Players").LocalPlayer.Character.P1.Handle.Sound2:Destroy()
+        game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
+        game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
+            p1.Button1Down:Connect(function()
+                if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
+                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
+                end;
+            end);
         end);
-    end);
-end)
-
-Folder.Button("Infinity Gun No Sound", "Click", function()
-    game:GetService("Players").LocalPlayer.Character.P1.Handle.Sound1:Destroy()
-    game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
-    game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
-        p1.Button1Down:Connect(function()
-            if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
-                game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
-            end;
+    end)
+    
+    Folder.Button("Infinity Gun No Sound", "Click", function()
+        game:GetService("Players").LocalPlayer.Character.P1.Handle.Sound1:Destroy()
+        game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
+        game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
+            p1.Button1Down:Connect(function()
+                if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
+                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
+                end;
+            end);
         end);
-    end);
-end)
-
-Folder.Toggle("Auto Get Gun", function(v)
-    getgenv().autogun = v
-    local Loop = game:GetService("RunService").Stepped:Connect(function()
-        if not getgenv().autogun then wait() Loop:Disconnect() wait() v = false end
-        v = true
-        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 0)
-        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 1)
-     end)
-end)
-
-local Folder = Tab4.Folder("Player", "Player Menu")
-
-    Folder.Button("Kill All", "Click", function()
-        function getD()
-            for a,b in pairs(game:GetDescendants()) do
-                if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
-                    return b
+    end)
+    
+    Folder.Toggle("Auto Get Gun", function(v)
+        getgenv().autogun = v
+        local Loop = game:GetService("RunService").Stepped:Connect(function()
+            if not getgenv().autogun then wait() Loop:Disconnect() wait() v = false end
+            v = true
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 0)
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 1)
+         end)
+    end)
+    
+    local Folder = Tab4.Folder("Player", "Player Menu")
+    
+        Folder.Button("Kill All", "Click", function()
+            function getD()
+                for a,b in pairs(game:GetDescendants()) do
+                    if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
+                        return b
+                    end
+                end
+                return false
+                end
+                local dmg = getD()
+                for i,v in pairs(game.Players:GetPlayers()) do
+                if v:IsA("Player") and v ~= game.Players.LocalPlayer then
+                    dmg:FireServer(workspace[v.Name].Humanoid)
                 end
             end
-            return false
-            end
-            local dmg = getD()
-            for i,v in pairs(game.Players:GetPlayers()) do
-            if v:IsA("Player") and v ~= game.Players.LocalPlayer then
-                dmg:FireServer(workspace[v.Name].Humanoid)
-            end
-        end
-    end)
-
-    Folder.Toggle("Loop Kill All", function(v)
-        getgenv().loopkillall = v
-        while wait(1.5) do
-        if not getgenv().loopkillall then return end
-        function getD()
-            for a,b in pairs(game:GetDescendants()) do
-                if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
-                    return b
+        end)
+    
+        Folder.Toggle("Loop Kill All", function(v)
+            getgenv().loopkillall = v
+            while wait(1.5) do
+            if not getgenv().loopkillall then return end
+            function getD()
+                for a,b in pairs(game:GetDescendants()) do
+                    if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
+                        return b
+                    end
+                end
+                return false
+                end
+                local dmg = getD()
+                for i,v in pairs(game.Players:GetPlayers()) do
+                if v:IsA("Player") and v ~= game.Players.LocalPlayer then
+                    dmg:FireServer(workspace[v.Name].Humanoid)
                 end
             end
-            return false
             end
-            local dmg = getD()
-            for i,v in pairs(game.Players:GetPlayers()) do
-            if v:IsA("Player") and v ~= game.Players.LocalPlayer then
-                dmg:FireServer(workspace[v.Name].Humanoid)
-            end
-        end
-        end
+        end)
+    local Folder = Tab4.Folder("Teleport", "TP")
+    Folder.Button("Spawn", "Click", function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-245, -0.399829865, 283, 1, 0, 0, 0, 1, 0, 0, 0, 1))
     end)
-local Folder = Tab4.Folder("Teleport", "TP")
-Folder.Button("Spawn", "Click", function()
-    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-245, -0.399829865, 283, 1, 0, 0, 0, 1, 0, 0, 0, 1))
-end)
-Folder.Button("Gun Spawm", "Click", function()
-    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-54, 3.25, 284, -1, 0, 0, 0, 0, 1, 0, 1, -0))
-end)
-Folder.Button("Happy House", "Click", function()
-    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-13.9500122, 1.65000188, 196.649857, 0, 0, 1, 0, 1, -0, -1, 0, 0))
-end)
-Folder.Button("Ice Room", "Click", function()
-    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(206.034775, -50.4972916, -82.2794189, 1, 0, 0, 0, 1, 0, 0, 0, 1))
-end)
-Folder.Button("Jail", "Click", function()
-    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-240.549973, 0.5, 128, 1, 0, 0, 0, 1, 0, 0, 0, 1))
-end)
-Folder.Button("Sky Island", "Click", function()
-    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-225, 2300, 268, 1, 0, 0, 0, 1, 0, 0, 0, 1))
-end)
-end
-
-
+    Folder.Button("Gun Spawm", "Click", function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-54, 3.25, 284, -1, 0, 0, 0, 0, 1, 0, 1, -0))
+    end)
+    Folder.Button("Happy House", "Click", function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-13.9500122, 1.65000188, 196.649857, 0, 0, 1, 0, 1, -0, -1, 0, 0))
+    end)
+    Folder.Button("Ice Room", "Click", function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(206.034775, -50.4972916, -82.2794189, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+    end)
+    Folder.Button("Jail", "Click", function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-240.549973, 0.5, 128, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+    end)
+    Folder.Button("Sky Island", "Click", function()
+        game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-225, 2300, 268, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+    end)
+    end
+local Tab5 = Window.Tab("Credits", 6031280894)
 
 local Folder = Tab5.Folder("Creator", "Mode By Git-Cat")
         Folder.Button("Dicord", "Click to Copy", function()
@@ -447,11 +438,11 @@ local Folder = Tab5.Folder("Game", "Game Name: " .. GameName)
     setclipboard(game.PlaceId)
     Notify({Description = "Game Id has been copied"; Title = "Git Hub Script"; Duration = 5;});
     end)
-    end
-end
 
 game:GetService("UserInputService").InputBegan:Connect(function(Input)
 if Input.KeyCode == Enum.KeyCode.RightControl then
 Window:Toggle()
+wait(0.5)
+game:GetService("CoreGui").Luminosity.Main:TweenPosition(UDim2.new(0.5, 0, 0.5, 0))
 end
 end)
