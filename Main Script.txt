@@ -1,255 +1,293 @@
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
 local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
 local Notify = AkaliNotif.Notify;
 local whitelistecheck = loadstring(game:HttpGet("https://raw.githubusercontent.com/kkolttugi07/Scripts/master/client",true))()
 local client = game:GetService("RbxAnalyticsService"):GetClientId();
-local VLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vep1032/VepStuff/main/VL"))()
-local swit = false
-
+local Luminosity = loadstring(game:HttpGet("https://raw.githubusercontent.com/iHavoc101/Genesis-Studios/main/UserInterface/Luminosity.lua", true))()
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+ESP.TeamMates = false
+TeamCheck = false
+TeamCheck2 = false
+VisCheck = false
 
-local PlrName = game:GetService("Players").LocalPlayer.Name
+local Window = Luminosity.new("Git-Cat UI", game:GetService("Players").LocalPlayer.Name, 6022668898)
+local Tab1 = Window.Tab("Main", 6026568198)
 
-Notify({Description = GameName; Title = "Git Hub Script"; Duration = 3;});
+local Tab2 = Window.Tab("Player", 6022668945)
+local Folder = Tab2.Folder("Local Player", "Local Player Setting")
+Folder.Slider("Player Speed", {Precise = true, Default = 16, Min = 16, Max = 250}, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+Folder.Slider("Player Jump", {Precise = true, Default = 50, Min = 50, Max = 250}, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+Folder.Slider("Gravity", {Precise = true, Default = 200, Min = 0, Max = 200}, function(v)
+    game.Workspace.Gravity = v
+end)
+Folder.Toggle("Auto Refresh", function(v)
+getgenv().spw = v
+while wait() do
+if not getgenv().spw then return end
+if game.Players.LocalPlayer.Character.Humanoid.Health < 1 and swit == false then
+    poi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    swit = true
+end
 
-local lib = VLib:Window("GIT-CAT GUI", PlrName, ":)")
+if swit == true then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = poi
+    end
+game.Players.LocalPlayer.CharacterAdded:connect(function()
+    wait(0.6)
+    swit = false
+end)
+end
+end)
+Folder.Button("invisible", "Click", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/iiKMg6iw"))();
+end)
 
-local Main = lib:Tab("Main")
+local Tab3 = Window.Tab("Esp", 6031075931)
+local Tab4 = Window.Tab("Special Game", 6031154873)
+local Tab5 = Window.Tab("Credits", 6031280894)
 
+
+
+
+for clientindex, clientfuncion in ipairs(whitelistecheck) do 
+    if clientfuncion == client then
+        local Folder = Tab1.Folder("Game Script", "Automatically recommend game hacks")
 if game.PlaceId == 155615604 then --프리즌 라이프
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/BqDQxCh7"))();
     end)
         loadstring(game:HttpGet("https://pastebin.com/raw/txtTb5xP"))();
 end
 
 if game.PlaceId == 6872274481 then --배드워즈
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
     end)
 end
 
 if game.PlaceId == 606849621 then --젤브
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/wawsdasdacx/ohascriptnrrewading/main/jbsaxcriptidk1"))();
     end)
 end
 
 if game.PlaceId == 445664957 then --파쿠르
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/LegoHacks/Parkour/main/Main.lua"))()
     end)
 end
 
 if game.PlaceId == 142823291 then --머더 2
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Doggo-cryto/EclipseMM2/master/Script", true))()
     end)
-    Main:Button("V.G Script", function()
+    Folder.Button("V.G Script", "Click", function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
     end)
 end
 
 if game.PlaceId == 286090429 then --아스널
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
     end)
 end
 
 if game.PlaceId == 3527629287 then --빅페인트볼
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
     end)
 end
 
 if game.PlaceId == 662417684 then --럭키블럭
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/xTXe5H9w"))()
     end)
 end
 
 if game.PlaceId == 914010731 then --로구울
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/z4gs/scripts/master/Ro-Ghoul%20Auto%20Farm.lua"))()
     end)
 end
 
 if game.PlaceId == 1224212277 then --매드시티
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGetAsync("https://jack1214060.xyz/jayhub"))()
     end)
 end
 
 if game.PlaceId == 2753915549 then --블피
-    Main:Button(GameName .. " Hack (Recommend)", function()
+    Folder.Button(GameName .. " Recommend", "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/ALLFREE/main/hyperx.lua"))()
     end)
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-IDK/Blox-Fruits-Script/main/blox%20fruit%20script.txt"))()
     end)
 end
 
 if game.PlaceId == 4442272183 then --블피 신세계
-    Main:Button(GameName .. " Hack (Recommend)", function()
+    Folder.Button(GameName .. " Recommend", "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/ALLFREE/main/hyperx.lua"))()
     end)
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-IDK/Blox-Fruits-Script/main/blox%20fruit%20script.txt"))()
     end)
 end
 
 if game.PlaceId == 7449423635 then --블피 신신세계
-    Main:Button(GameName .. " Hack (Recommend)", function()
+    Folder.Button(GameName .. " Recommend", "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/ALLFREE/main/hyperx.lua"))()
     end)
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-IDK/Blox-Fruits-Script/main/blox%20fruit%20script.txt"))()
     end)
 end
 
 if game.PlaceId == 920587237 then --입양
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
     end)
 end
 
 if game.PlaceId == 6447798030 then --프나펌
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
     end)
 end
 
 if game.PlaceId == 537413528 then --배만들기
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Build%20A%20Boat%20For%20Treasure/BABFT"))()
     end)
 end
 
 if game.PlaceId == 4520749081 then --킹피
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/sannin9000/scripts/main/kinglegacy.lua"))()
     end)
 end
 
 if game.PlaceId == 5931540094 then --킹피 레이드
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/sannin9000/scripts/main/kinglegacy.lua"))()
     end)
 end
 
 if game.PlaceId == 6381829480 then --킹피 신세계
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/sannin9000/scripts/main/kinglegacy.lua"))()
     end)
 end
 
 if game.PlaceId == 4787629450 then --부가부가
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/YEs13421k/BOOGA-SCRIPT/main/Roblox%20Booga%20Booga%20Script"))();
     end)
 end
 
 if game.PlaceId == 2809202155 then --너기묘
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         getgenv().Key = "BETA_V1"
         loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/ALLHACKLOADER/main/YBALOADER"))()
     end)
 end
 
 if game.PlaceId == 5290908008 then --너기묘 1ㄷ1
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         getgenv().Key = "BETA_V1"
         loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/ALLHACKLOADER/main/YBALOADER"))()
     end)
 end
 
 if game.PlaceId == 4643697430 then --스보런
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/kolgie/YBA-GUI/main/yba-gui-obfuscated.lua"))()
     end)
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/crackus/main/xenonusfix", true))()
     end)
 end
 
 if game.PlaceId == 183364845 then --스피드 런
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/dragonismcode/robloxscripts/main/speedrun4.lua'), true))()
     end)
 end
 
 if game.PlaceId == 6679274937 then --반스 월드
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/and45554/DawnyHub/main/Dawny", true))()
     end)
 end
 
 if game.PlaceId == 2317712696 then --와일드 웨스트
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/saucekid/scripts/main/yeehaw.lua"))()
     end)
 end
 
 if game.PlaceId == 111311599 then --크리티컬 스트라이크
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/snjSSnHT"))()
     end)
 end
 
 if game.PlaceId == 189707 then --자연 재해 서바이벌
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/garfield%20hub", true))()
     end)
 end
 
 if game.PlaceId == 13822889 then --럼타
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet'https://raw.githubusercontent.com/0x37Dev/Cool-Solo-Dupe-Thing/main/script.lua')()
     end)
 end
 
 if game.PlaceId == 2788229376 then --다후드
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/cjdjmj/new-ui-godmode/main/README.md", true))()
     end)
 end
 
 if game.PlaceId == 4042427666 then --애니 파이팅 시뮬
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AokijiFlame/AFS/main/AnimeFightingSim"))()
     end)
 end
 
 if game.PlaceId == 1345139196 then --보물 사냥 시물레이터
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("http://void-scripts.com/Scripts/treasureHuntSim.lua"))()
     end)
 end
 
 if game.PlaceId == 6846458508 then --어유타
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/johnbruhno/zzz/main/g"))()
     end)
 end
 
 if game.PlaceId == 6299805723 then --애니 파이터
-    Main:Button(GameName .. " Hack", function()
+    Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/kkolttugi07/Hack-Scripts/main/Anime%20Fighters%20Simulator%20Skip%20Quest"))()
     end)
 end
+local Folder = Tab1.Folder("Script", "Scripts")
 
-local Script = lib:Tab("Script")
-
-Script:Label("━━━━━━━━━━━━━━━|Script|━━━━━━━━━━━━━━━━")
-
-Script:Button("InfiniteYield", function()
+Folder.Button("InfiniteYield", "Click", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
 end)
 
-Script:Button("Hit Box", function()
+Folder.Button("Hit Box", "Click", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/shit%20script%20pack/CheatX'))()
 end)
 
-Script:Button("Anti-AFK", function()
+Folder.Button("Anti-AFK", "Click", function()
     local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
@@ -258,135 +296,83 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     end)
 end)
 
-Script:Button("invisible", function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/iiKMg6iw"))();
-end)
+local Folder = Tab1.Folder("Developer Script", "Scripts")
 
-Script:Label("━━━━━━━━━━━━|Developer Script|━━━━━━━━━━━━")
-
-Script:Button("Simple Spy", function()
+Folder.Button("Simple Spy", "Click", function()
     loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
 end)
 
-Script:Button("Dex", function()
+Folder.Button("Dex", "Click", function()
     loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
 end)
 
-Script:Button("Chat Log", function()
+Folder.Button("Chat Log", "Click", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/stggPUBM", true))()
 end)
 
-local FeScript = lib:Tab("Fe Script")
+local Folder = Tab1.Folder("Fe Script", "Scripts")
 
-FeScript:Label("━━━━━━━━━━━━━━━|Fe Script|━━━━━━━━━━━━━━━")
-FeScript:Button("Fe Gravity Gun", function()
+Folder.Button("Fe Gravity Gun", "Click", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/KduE9A6z'))()
 end)
-FeScript:Button("Fe Car Fly", function()
+Folder.Button("Fe Car Fly", "Click", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/kkolttugi07/Hack-Scripts/main/Car%20Fly'))()
 end)
 
 
 
-local LocalPlr = lib:Tab("Local Player")
-
-
-LocalPlr:Toggle("Auto Refresh",function(v)
-    getgenv().spw = v
-    while wait() do
-    if not getgenv().spw then return end
-    if game.Players.LocalPlayer.Character.Humanoid.Health < 1 and swit == false then
-        poi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-        swit = true
-    end
-
-    if swit == true then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = poi
-        end
-    game.Players.LocalPlayer.CharacterAdded:connect(function()
-        wait(0.6)
-        swit = false
-    end)
-end
+local Cheat = Tab3.Cheat("ESP", "ESP Setting", function(v)
+    ESP:Toggle(v)
 end)
-LocalPlr:Slider("Player Speed", 16, 250, 0, function(v)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+Cheat.Toggle("Team Check", function(e)
+    ESP.TeamMates = e
 end)
-LocalPlr:Slider("Player Jump", 50, 250, 0, function(v)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
-end)
-LocalPlr:Slider("Gravity", 0, 200, 200, function(v)
-    game.Workspace.Gravity = (v)
-end)
-
-local PremGame = lib:Tab("Premium Game Hack")
-
-PremGame:Label("━━━━━━━━━━━|Only Premium User|━━━━━━━━━━━")
-
-for clientindex, clientfuncion in ipairs(whitelistecheck) do 
-    if clientfuncion == client then 
 if game.PlaceId == 3952704772 then
-    if workspace:FindFirstChild("Yes", true) then workspace:FindFirstChild("Yes", true).Parent.Parent.Name = ("gun"); end
-    if workspace.gun:FindFirstChild("P1", true) then workspace.gun:FindFirstChild("P1", true).Parent.Name = ("getgun");
-    game:GetService("Workspace").gun.getgun.P1.Value:Destroy()
-    game:GetService("Workspace").gun.getgun.P1:Destroy()
-    end
 
-    PremGame:Label("Sound1: Sound X, Sound2: Sound O")
-    PremGame:Dropdown("Infinity Gun", {"Sound1", "Sound2"}, function(Sound)
-        game:GetService("Players").LocalPlayer.Character.P1.Handle[Sound]:Destroy()
-        game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
-        game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
-            p1.Button1Down:Connect(function()
-                if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
-                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
-                end;
-            end);
-        end);
-    end)
-
-    PremGame:Toggle("Auto Get Gun", function(v)
-        getgenv().autogun = v
-        local Loop = game:GetService("RunService").Stepped:Connect(function()
-            if not getgenv().autogun then wait() Loop:Disconnect() wait() v = false end
-            v = true
-            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 0)
-            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 1)
-         end)
-    end)
-
-
-
-    PremGame:Label("━━━━━━━━━━━━━━━|Player|━━━━━━━━━━━━━━━")
-
-PremGame:Textbox("Player Name (Can Be Shortened)", true, function(v)
-    name = v
-    for i,v in pairs(game:service'Players':GetPlayers()) do
-    if v.Name:match(name) then
-        xdvalue = v.Name
-        Notify({Description = "Player Name = " .. xdvalue; Title = "Git Hub Script"; Duration = 3;});
-    end
+local Folder = Tab4.Folder("Gun", "Gun Menu")
+if workspace:FindFirstChild("Yes", true) then workspace:FindFirstChild("Yes", true).Parent.Parent.Name = ("gun"); end
+if workspace.gun:FindFirstChild("P1", true) then workspace.gun:FindFirstChild("P1", true).Parent.Name = ("getgun");
+game:GetService("Workspace").gun.getgun.P1.Value:Destroy()
+game:GetService("Workspace").gun.getgun.P1:Destroy()
 end
+
+Folder.Button("Infinity Gun Sound", "Click", function()
+    game:GetService("Players").LocalPlayer.Character.P1.Handle.Sound2:Destroy()
+    game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
+    game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
+        p1.Button1Down:Connect(function()
+            if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
+                game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
+            end;
+        end);
+    end);
 end)
 
-PremGame:Toggle("Player Loop Kill", function(v)
-    getgenv().loopkill = v
-    while wait(2) do
-        if not getgenv().loopkill then return end
-        function getD()
-            for a,b in pairs(game:GetDescendants()) do
-                if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
-                    return b
-                end
-            end
-            return false
-            end
-            local dmg = getD()
-                dmg:FireServer(workspace[xdvalue].Humanoid)
-            end
-    end)
+Folder.Button("Infinity Gun No Sound", "Click", function()
+    game:GetService("Players").LocalPlayer.Character.P1.Handle.Sound1:Destroy()
+    game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
+    game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
+        p1.Button1Down:Connect(function()
+            if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
+                game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
+            end;
+        end);
+    end);
+end)
 
-    PremGame:Button("Kill All", function()
+Folder.Toggle("Auto Get Gun", function(v)
+    getgenv().autogun = v
+    local Loop = game:GetService("RunService").Stepped:Connect(function()
+        if not getgenv().autogun then wait() Loop:Disconnect() wait() v = false end
+        v = true
+        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 0)
+        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.gun.getgun, 1)
+     end)
+end)
+
+local Folder = Tab4.Folder("Player", "Player Menu")
+
+    Folder.Button("Kill All", "Click", function()
         function getD()
             for a,b in pairs(game:GetDescendants()) do
                 if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
@@ -403,7 +389,7 @@ PremGame:Toggle("Player Loop Kill", function(v)
         end
     end)
 
-    PremGame:Toggle("Loop Kill All", function(v)
+    Folder.Toggle("Loop Kill All", function(v)
         getgenv().loopkillall = v
         while wait(1.5) do
         if not getgenv().loopkillall then return end
@@ -423,31 +409,48 @@ PremGame:Toggle("Player Loop Kill", function(v)
         end
         end
     end)
-
-end end end
-
-
-
-
-
-local Credit = lib:Tab("Credits")
-
-Credit:Label("━━━━━━━━━━━━━━━|Creator|━━━━━━━━━━━━━━━")
-Credit:Label("Made By Git-Cat")
-
-Credit:Label("━━━━━━━━━━━━━━━|Discord|━━━━━━━━━━━━━━━")
-Credit:Button("Copy Discord Link", function()
-    setclipboard("https://discord.gg/sXRfvRyQKx")
-    Notify({Description = "link has been copied"; Title = "Git Hub Script"; Duration = 5;});
+local Folder = Tab4.Folder("Teleport", "TP")
+Folder.Button("Spawn", "Click", function()
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-245, -0.399829865, 283, 1, 0, 0, 0, 1, 0, 0, 0, 1))
 end)
-Credit:Label("━━━━━━━━━━━━━━━━━|UI|━━━━━━━━━━━━━━━━━")
-Credit:Button("Destroy UI",function()
-    game.CoreGui["Library"]:Destroy()
-    game.CoreGui["AkaliNotif"]:Destroy()
+Folder.Button("Gun Spawm", "Click", function()
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-54, 3.25, 284, -1, 0, 0, 0, 0, 1, 0, 1, -0))
+Folder.Button("Happy House", "Click", function()
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-13.9500122, 1.65000188, 196.649857, 0, 0, 1, 0, 1, -0, -1, 0, 0))
 end)
-Credit:Label("━━━━━━━━━━━━━━━━|Game|━━━━━━━━━━━━━━━━")
-Credit:Label(GameName)
-Credit:Button(game.PlaceId, function()
+Folder.Button("Ice Room", "Click", function()
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(206.034775, -18.4972916, -82.2794189, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+end)
+Folder.Button("Jail", "Click", function()
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-240.549973, 0.5, 128, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+end)
+Folder.Button("Sky Island", "Click", function()
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-225, 2300, 268, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+end)
+end
+
+
+
+local Folder = Tab5.Folder("Creator", "Mode By Git-Cat")
+        Folder.Button("Dicord", "Click to Copy", function()
+        setclipboard("https://discord.gg/sXRfvRyQKx")
+        Notify({Description = "link has been copied"; Title = "Git Hub Script"; Duration = 5;});
+        end)
+local Folder = Tab5.Folder("UI", "UI Toggle Key: RightControl")
+    Folder.Button("UI Destroy", "Click", function()
+        game.CoreGui["Luminosity"]:Destroy()
+        game.CoreGui["AkaliNotif"]:Destroy()
+        end)
+local Folder = Tab5.Folder("Game", "Game Name: " .. GameName)
+    Folder.Button(game.PlaceId, "Click to Copy", function()
     setclipboard(game.PlaceId)
     Notify({Description = "Game Id has been copied"; Title = "Git Hub Script"; Duration = 5;});
+    end)
+    end
+end
+
+game:GetService("UserInputService").InputBegan:Connect(function(Input)
+if Input.KeyCode == Enum.KeyCode.RightControl then
+Window:Toggle()
+end
 end)
