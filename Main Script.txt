@@ -5,6 +5,7 @@ local whitelistecheck = loadstring(game:HttpGet("https://raw.githubusercontent.c
 local client = game:GetService("RbxAnalyticsService"):GetClientId();
 local Luminosity = loadstring(game:HttpGet("https://raw.githubusercontent.com/iHavoc101/Genesis-Studios/main/UserInterface/Luminosity.lua", true))()
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+local uitoggle = false
 ESP.TeamMates = false
 TeamCheck = false
 TeamCheck2 = false
@@ -459,7 +460,7 @@ local Folder = Tab5.Folder("Creator", "Mode By Git-Cat")
         setclipboard("https://discord.gg/sXRfvRyQKx")
         Notify({Description = "link has been copied"; Title = "Git Hub Script"; Duration = 5;});
         end)
-local Folder = Tab5.Folder("UI", "UI Toggle Key: RightControl, Return Position Key: Home")
+local Folder = Tab5.Folder("UI", "UI Toggle Key: RightControl")
     Folder.Button("UI Destroy", "Click", function()
         game.CoreGui["Luminosity"]:Destroy()
         game.CoreGui["AkaliNotif"]:Destroy()
@@ -471,13 +472,17 @@ local Folder = Tab5.Folder("Game", "Game Name: " .. GameName)
     end)
 
 game:GetService("UserInputService").InputBegan:Connect(function(Input)
-if Input.KeyCode == Enum.KeyCode.RightControl then
-Window:Toggle()
-end
+    if Input.KeyCode == Enum.KeyCode.RightControl and uitoggle == false then
+    game:GetService("CoreGui").Luminosity.Main.Visible = false
+    wait()
+    uitoggle = true
+    end
 end)
 
 game:GetService("UserInputService").InputBegan:Connect(function(Input)
-    if Input.KeyCode == Enum.KeyCode.Home then
-    game:GetService("CoreGui").Luminosity.Main:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), 1)
+    if Input.KeyCode == Enum.KeyCode.RightControl and uitoggle == true then
+    game:GetService("CoreGui").Luminosity.Main.Visible = true
+    wait()
+    uitoggle = false
     end
 end)
