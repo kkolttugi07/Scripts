@@ -442,6 +442,11 @@ local Folder = Tab5.Folder("Game", "Game Name: " .. GameName)
 game:GetService("UserInputService").InputBegan:Connect(function(Input)
 if Input.KeyCode == Enum.KeyCode.RightControl then
 Window:Toggle()
-game:GetService("CoreGui").Luminosity.Main:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "Out", "Back", 0)
 end
+end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(Input)
+    if Input.KeyCode == Enum.KeyCode.Home then
+    game:GetService("CoreGui").Luminosity.Main:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), 1)
+    end
 end)
