@@ -25,9 +25,6 @@ if game.PlaceId == 6872274481 then --배드워즈
     Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
     end)
-    Folder.Button(GameName .. " 2", "Click", function()
-        loadstring(game:HttpGet'https://dogix.wtf/scripts/noboline/780f5d6e-2d9b-49ec-a68f-46a4295dff41')()
-    end)
 end
 
 if game.PlaceId == 606849621 then --젤브
