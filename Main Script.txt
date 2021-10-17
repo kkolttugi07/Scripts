@@ -291,6 +291,7 @@ end)
 Folder.Toggle("Auto Refresh", function(v)
 getgenv().spw = v
 while wait() do
+    swit = false
 if not getgenv().spw then return end
 if game.Players.LocalPlayer.Character.Humanoid.Health < 0.1 and swit == false then
     poi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -365,11 +366,21 @@ if game.PlaceId == 3952704772 then
     end)
 
     Folder.Button("Click Kill", "Click", function()
-            p1.Button1Down:Connect(function()
-                if Target.Parent:FindFirstChild("Humanoid") ~= nil then
-                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
+        function getD()
+            for a,b in pairs(game:GetDescendants()) do
+                if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
+                    return b
+                end
+            end
+            return false
+            end
+            local dmg = getD()
+        
+            game.Players.LocalPlayer:GetMouse().Button1Down:Connect(function()
+                if game.Players.LocalPlayer:GetMouse().Target.Parent:FindFirstChild("Humanoid") ~= nil then
+                    dmg:FireServer(game.Players.LocalPlayer:GetMouse().Target.Parent.Humanoid);
                 end;
-            end);
+            end);        
         end);
     
     Folder.Toggle("Auto Get Gun", function(v)
