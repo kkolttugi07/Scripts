@@ -339,6 +339,18 @@ if game.PlaceId == 3952704772 then
             end);
         end);
     end)
+
+    Folder.Button("Infinity Gun Sound No Light", "Click", function()
+        game:GetService("Players").LocalPlayer.Character.P1.Handle.PointLight:Destroy()
+        game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
+        game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
+            p1.Button1Down:Connect(function()
+                if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
+                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
+                end;
+            end);
+        end);
+    end)
     
     Folder.Button("Infinity Gun No Sound", "Click", function()
         game:GetService("Players").LocalPlayer.Character.P1.Handle.Sound1:Destroy()
@@ -351,6 +363,14 @@ if game.PlaceId == 3952704772 then
             end);
         end);
     end)
+
+    Folder.Button("Click Kill", "Click", function()
+            p1.Button1Down:Connect(function()
+                if Target.Parent:FindFirstChild("Humanoid") ~= nil then
+                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
+                end;
+            end);
+        end);
     
     Folder.Toggle("Auto Get Gun", function(v)
         getgenv().autogun = v
@@ -428,7 +448,7 @@ local Folder = Tab5.Folder("Creator", "Mode By Git-Cat")
         setclipboard("https://discord.gg/sXRfvRyQKx")
         Notify({Description = "link has been copied"; Title = "Git Hub Script"; Duration = 5;});
         end)
-local Folder = Tab5.Folder("UI", "UI Toggle Key: RightControl")
+local Folder = Tab5.Folder("UI", "UI Toggle Key: RightControl, Return Position Key: Home")
     Folder.Button("UI Destroy", "Click", function()
         game.CoreGui["Luminosity"]:Destroy()
         game.CoreGui["AkaliNotif"]:Destroy()
