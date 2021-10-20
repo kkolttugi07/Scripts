@@ -312,6 +312,21 @@ Folder.Button("invisible", "Click", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/iiKMg6iw"))();
 end)
 
+Folder.Switch("God", function(v)
+    getgenv().god = v
+
+    game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+    wait()
+    game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Physics, false)
+    wait()
+        if not getgenv().god then 
+            game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+            wait()
+            game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Physics, true)
+            wait()
+        end
+end)
+
 local Tab3 = Window.Tab("Esp", 6031075931)
 local Cheat = Tab3.Cheat("ESP", "ESP Setting", function(v)
     ESP:Toggle(v)
