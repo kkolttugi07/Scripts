@@ -312,6 +312,21 @@ game.Players.LocalPlayer.CharacterAdded:connect(function()
 end)
 end
 end)
+
+Folder.Button("Run", "Click", function()
+    game:GetService("UserInputService").InputBegan:Connect(function(Shift)
+        if Shift.KeyCode == Enum.KeyCode.LeftShift then
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 30
+        end 
+       end)
+       
+       game:GetService("UserInputService").InputEnded:Connect(function(Shift)
+        if Shift.KeyCode == Enum.KeyCode.LeftShift then
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        end
+       end)
+end)
+
 Folder.Button("invisible", "Click", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/iiKMg6iw"))();
 end)
@@ -447,7 +462,7 @@ if game.PlaceId == 3952704772 then
                             f.Parent.Parent.Name = ("getknife");
                             if workspace.getknife:FindFirstChild("Part", true) then workspace.getknife:FindFirstChild("Part", true).Name = ("knife");
                             end
-    end end end end end   
+    end end end end end  
     end
 
     Folder.Button("Infinity Knife", "Click", function()
@@ -456,6 +471,7 @@ if game.PlaceId == 3952704772 then
         
         h = false;
         game.Players.LocalPlayer.Character.N1.Equipped:Connect(function(p1)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 25
             p1.Button1Down:Connect(function()
                 game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game:GetService("Players").LocalPlayer.Character.N1.LocalScript.Animation):Play();
                 wait(0.1);
