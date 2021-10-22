@@ -293,6 +293,16 @@ end)
 Folder.Slider("Gravity", {Precise = true, Default = 200, Min = 0, Max = 200}, function(v)
     game.Workspace.Gravity = v
 end)
+Folder.Switch("Select Items", function(v)
+    getgenv().autoselect = v
+    while wait() do
+        if not getgenv().autoselect then return end
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+        if v:IsA("Tool") then v.Parent = game:GetService("Players").LocalPlayer.Character
+        end
+    end
+end
+end)
 Folder.Toggle("Auto Refresh", function(v)
 getgenv().spw = v
 while wait() do
@@ -538,6 +548,46 @@ end)
             end
             end
         end)
+
+    local Folder = Tab4.Folder("Misc", "Misc Menu")
+    if workspace:FindFirstChild("Tray", true) then workspace:FindFirstChild("Tray", true).Parent.Name = ("vending");
+    end
+
+    Folder.Switch("Loop Vending Machine", function(v)
+    getgenv().loopvending = v
+    while wait() do
+        if not getgenv().loopvending then return end
+        for i,v in pairs(workspace.vending:GetDescendants()) do
+            if v:IsA("ClickDetector") then
+            fireclickdetector(v)
+                end
+            end
+        end
+    end)
+
+    Folder.Switch("Get Tool", function(v)
+        getgenv().touchinter = v
+        while wait() do
+            if not getgenv().touchinter then return end
+            for i,v in pairs(workspace:GetChildren()) do
+                if v:IsA("Tool") then
+                 game:GetService("Players").LocalPlayer.Character.Humanoid:EquipTool(v)    
+                end
+            end
+        end
+    end)
+
+    Folder.Switch("Select Items", function(v)
+        getgenv().autoselect = v
+        while wait() do
+            if not getgenv().autoselect then return end
+        for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+            if v:IsA("Tool") then v.Parent = game:GetService("Players").LocalPlayer.Character
+            end
+        end
+    end
+    end)
+
     local Folder = Tab4.Folder("Teleport", "TP")
     Folder.Button("Spawn", "Click", function()
         game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-245, -0.399829865, 283, 1, 0, 0, 0, 1, 0, 0, 0, 1))
