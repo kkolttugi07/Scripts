@@ -471,7 +471,6 @@ if game.PlaceId == 3952704772 then
         
         h = false;
         game.Players.LocalPlayer.Character.N1.Equipped:Connect(function(p1)
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 25
             p1.Button1Down:Connect(function()
                 game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game:GetService("Players").LocalPlayer.Character.N1.LocalScript.Animation):Play();
                 wait(0.1);
