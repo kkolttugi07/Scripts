@@ -293,15 +293,11 @@ end)
 Folder.Slider("Gravity", {Precise = true, Default = 200, Min = 0, Max = 200}, function(v)
     game.Workspace.Gravity = v
 end)
-Folder.Switch("Select Items", function(v)
-    getgenv().autoselect = v
-    while wait() do
-        if not getgenv().autoselect then return end
+Folder.Button("Drop All", "Click", function(v)
     for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
         if v:IsA("Tool") then v.Parent = game:GetService("Players").LocalPlayer.Character
         end
     end
-end
 end)
 Folder.Toggle("Auto Refresh", function(v)
 getgenv().spw = v
@@ -396,42 +392,6 @@ if game.PlaceId == 3952704772 then
     game:GetService("Workspace").gun.getgun.P1:Destroy()
     end
     
-    Folder.Button("Infinity Gun Sound", "Click", function()
-        game:GetService("Players").LocalPlayer.Character.P1.Handle.Sound2:Destroy()
-        game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
-        game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
-            p1.Button1Down:Connect(function()
-                if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
-                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
-                end;
-            end);
-        end);
-    end)
-
-    Folder.Button("Infinity Gun Sound No Light", "Click", function()
-        game:GetService("Players").LocalPlayer.Character.P1.Handle.PointLight:Destroy()
-        game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
-        game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
-            p1.Button1Down:Connect(function()
-                if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
-                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
-                end;
-            end);
-        end);
-    end)
-    
-    Folder.Button("Infinity Gun No Sound", "Click", function()
-        game:GetService("Players").LocalPlayer.Character.P1.Handle.Sound1:Destroy()
-        game:GetService("Players").LocalPlayer.Character.P1.LocalScript:Destroy()
-        game:GetService("Players").LocalPlayer.Character.P1.Equipped:Connect(function(p1)
-            p1.Button1Down:Connect(function()
-                if p1.Target.Parent:FindFirstChild("Humanoid") ~= nil then
-                    game:GetService("Players").LocalPlayer.Character.P1.RemoteEvent:FireServer(p1.Target.Parent.Humanoid);
-                end;
-            end);
-        end);
-    end)
-
     Folder.Button("Click Kill", "Click", function()
         function getD()
             for a,b in pairs(game:GetDescendants()) do
@@ -474,28 +434,6 @@ if game.PlaceId == 3952704772 then
                             end
     end end end end end  
     end
-
-    Folder.Button("Infinity Knife", "Click", function()
-        game.Players.LocalPlayer.Character.N1.LocalScript.Disabled = true
-        game.Players.LocalPlayer.Character.N1.Handle.Sound:Destroy()
-        
-        h = false;
-        game.Players.LocalPlayer.Character.N1.Equipped:Connect(function(p1)
-            p1.Button1Down:Connect(function()
-                game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game:GetService("Players").LocalPlayer.Character.N1.LocalScript.Animation):Play();
-                wait(0.1);
-                h = true;
-                wait(0.2);
-                h = false;
-            end);
-            game:GetService("Players").LocalPlayer.Character.N1.Handle.Touched:Connect(function(p2)
-                if p2.Parent:FindFirstChild("Humanoid") and h == true then
-                    game:GetService("Players").LocalPlayer.Character.N1.RemoteEvent:FireServer(p2.Parent.Humanoid);
-                end;
-            end);
-        end);
-        
-end)
 
     Folder.Toggle("Auto Get Knife", function(knife)
         getgenv().autoknife = knife
@@ -577,15 +515,16 @@ end)
         end
     end)
 
-    Folder.Switch("Select Items", function(v)
-        getgenv().autoselect = v
-        while wait() do
-            if not getgenv().autoselect then return end
+    Folder.Button("Drop All", "Click", function(v)
         for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
             if v:IsA("Tool") then v.Parent = game:GetService("Players").LocalPlayer.Character
             end
         end
-    end
+        for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+            if v:IsA("Tool") then
+            v.Parent = game.Workspace
+            end
+        end
     end)
 
     local Folder = Tab4.Folder("Teleport", "TP")
