@@ -1,8 +1,6 @@
 local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
 local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
 local Notify = AkaliNotif.Notify;
-local whitelistecheck = loadstring(game:HttpGet("https://raw.githubusercontent.com/kkolttugi07/Scripts/master/client",true))()
-local client = game:GetService("RbxAnalyticsService"):GetClientId();
 local Luminosity = loadstring(game:HttpGet("https://raw.githubusercontent.com/iHavoc101/Genesis-Studios/main/UserInterface/Luminosity.lua", true))()
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 local uitoggle = false
@@ -386,7 +384,7 @@ local Tab4 = Window.Tab("Special Game", 6031154873)
 if game.PlaceId == 3952704772 then
 
     local Folder = Tab4.Folder("Gun", "Gun Menu")
-    if workspace:FindFirstChild("Yes", true) then workspace:FindFirstChild("Yes", true).Parent.Parent.Name = ("gun"); end
+    if workspace:FindFirstChild("No", true) then workspace:FindFirstChild("No", true).Parent.Name = ("gun"); end
     if workspace.gun:FindFirstChild("P1", true) then workspace.gun:FindFirstChild("P1", true).Parent.Name = ("getgun");
     game:GetService("Workspace").gun.getgun.P1.Value:Destroy()
     game:GetService("Workspace").gun.getgun.P1:Destroy()
@@ -422,49 +420,8 @@ if game.PlaceId == 3952704772 then
          end
     end)
 
-    local Folder = Tab4.Folder("Knife", "Gun Menu")
-    for a,b in pairs(game.Workspace:GetChildren()) do
-        if b.Name == "Model" then
-            for c,d in pairs(b:GetDescendants()) do
-                if d.Name == "Handle" then
-                    for e,f in pairs(d:GetDescendants()) do
-                        if f.Name == "Sound" then
-                            f.Parent.Parent.Name = ("getknife");
-                            if workspace.getknife:FindFirstChild("Part", true) then workspace.getknife:FindFirstChild("Part", true).Name = ("knife");
-                            end
-    end end end end end  
-    end
 
-    Folder.Toggle("Auto Get Knife", function(knife)
-        getgenv().autoknife = knife
-        local Loopknife = game:GetService("RunService").Stepped:Connect(function()
-            knife = true
-            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.getknife.knife, 0)
-            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.getknife.knife, 1) 
-         end)
-         while wait() do
-            if not getgenv().autoknife then Loopknife:Disconnect() knife = false end
-        end
-    end)    
-    
     local Folder = Tab4.Folder("Player", "Player Menu")
-    
-        Folder.Button("Kill All", "Click", function()
-            function getD()
-                for a,b in pairs(game:GetDescendants()) do
-                    if b.Name == "RemoteEvent" and b:IsA("RemoteEvent") then
-                        return b
-                    end
-                end
-                return false
-                end
-                local dmg = getD()
-                for i,v in pairs(game.Players:GetPlayers()) do
-                if v:IsA("Player") and v ~= game.Players.LocalPlayer then
-                    dmg:FireServer(workspace[v.Name].Humanoid)
-                end
-            end
-        end)
     
         Folder.Toggle("Loop Kill All", function(v)
             getgenv().loopkillall = v
