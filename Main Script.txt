@@ -84,6 +84,12 @@ if game.PlaceId == 2753915549 then --블피
     Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-IDK/Blox-Fruits-Script/main/blox%20fruit%20script.txt"))()
     end)
+    Folder.Button("Fast Punch", "Click", function()
+        loadstring(game:HttpGet("https://rasputin-bf.glitch.me/bloxfruits.lua"))()
+    end)
+    Folder.Button("Auto Farm", "Click", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/StormSKz12/StirkeHub1/main/Gameincluded"))()
+    end)
 end
 
 if game.PlaceId == 4442272183 then --블피 신세계
@@ -93,6 +99,12 @@ if game.PlaceId == 4442272183 then --블피 신세계
     Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-IDK/Blox-Fruits-Script/main/blox%20fruit%20script.txt"))()
     end)
+    Folder.Button("Fast Punch", "Click", function()
+        loadstring(game:HttpGet("https://rasputin-bf.glitch.me/bloxfruits.lua"))()
+    end)
+    Folder.Button("Auto Farm", "Click", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/StormSKz12/StirkeHub1/main/Gameincluded"))()
+    end)
 end
 
 if game.PlaceId == 7449423635 then --블피 신신세계
@@ -101,6 +113,12 @@ if game.PlaceId == 7449423635 then --블피 신신세계
     end)
     Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-IDK/Blox-Fruits-Script/main/blox%20fruit%20script.txt"))()
+    end)
+    Folder.Button("Fast Punch", "Click", function()
+        loadstring(game:HttpGet("https://rasputin-bf.glitch.me/bloxfruits.lua"))()
+    end)
+    Folder.Button("Auto Farm", "Click", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/StormSKz12/StirkeHub1/main/Gameincluded"))()
     end)
 end
 
