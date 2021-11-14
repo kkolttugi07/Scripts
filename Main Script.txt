@@ -128,6 +128,12 @@ if game.PlaceId == 920587237 then --입양
     end)
 end
 
+if game.PlaceId == 6284583030 then --펫시뮬
+    Folder.Button(GameName, "Click", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/si1nnx/psxx/main/g"))()
+    end)
+end
+
 if game.PlaceId == 6447798030 then --프나펌
     Folder.Button(GameName, "Click", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
